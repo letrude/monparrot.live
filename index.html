@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation ASCII du Chien</title>
+    <style>
+        /* Styles pour centrer l'animation et utiliser une police adaptée */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: #ffffff;
+            margin: 0;
+            font-family: monospace;
+            white-space: pre; /* Important pour respecter les espaces dans l'ASCII art */
+        }
+        #ascii-animation {
+            white-space: pre; /* Important pour préserver les sauts de ligne */
+            font-size: 16px;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ascii-animation"></div>
+
+    <script>
+        // Définir les frames de l'animation du chien
+        const frames = [
+`
+         ,--._______,-. 
+       ,','  ,    .  ,_\`-. 
+      / /  ,' , _\` \`\`. |  )      \`-.. 
+     (,';'""\`/ '"\`-._ \` \\/ ______   \\\\ 
+       : ,o.-\`- ,o.  )\` -'      \`---.)) 
+       : , d8b ^-.   '|   \`.      \`    \`. 
+       |/ __:_     \`. |  ,  \`       \`    \\ 
+       | ( ,-.\`-.    ;'  ;   \`       :    ; 
+       | |  ,   \`.      /     ;      :    \\ 
+       ;-'\`:::._,\`.__),'             :     ; 
+      / ,  \`-   \`--                  ;     | 
+     /  \\                   \`       ,      | 
+    (    \`     :              :    ,\\      | 
+     \\   \`.    :     :        :  ,'  \\    : 
+      \\    \`|-- \`     \\ ,'    ,-'     :-.-\'; 
+      :     |\`--.______;     |        :    : 
+       :    /           |    |         |   \\ 
+       |    ;           ;    ;        /     ; 
+     _/--' |   -grr-   :\`-- /         \\_:_:_| 
+   ,',','  |           |___ \\ 
+   \`^._,--'           / , , .) 
+                      \`-._,-'`,
+`
+         ,--._______,-. 
+       ,','  ,    .  ,_\`-. 
+      / /  ,' , _\` \`\`. |  )           ..-'
+     (,';'""\`/ '"\`-._ \` \\/ ______    //
+       : ,o.-\`- ,o.  )\` -'      \`---.)) 
+       : , d8b ^-.   '|   \`.      \`    \`. 
+       |/ __:_     \`. |  ,  \`       \`    \\ 
+       | ( ,-.\`-.    ;'  ;   \`       :    ; 
+       | |  ,   \`.      /     ;      :    \\ 
+       ;-'\`:::._,\`.__),'             :     ; 
+      / ,  \`-   \`--                  ;     | 
+     /  \\                   \`       ,      | 
+    (    \`     :              :    ,\\      | 
+     \\   \`.    :     :        :  ,'  \\    : 
+      \\    \`|-- \`     \\ ,'    ,-'     :-.-\'; 
+      :     |\`--.______;     |        :    : 
+       :    /           |    |         |   \\ 
+       |    ;           ;    ;        /     ; 
+     _/--' |   -grr-   :\`-- /         \\_:_:_| 
+   ,',','  |           |___ \\ 
+   \`^._,--'           / , , .) 
+                      \`-._,-'`
+            // Ajoutez d'autres frames si nécessaire
+        ];
+
+        // Sélectionner l'élément où afficher l'animation
+        const animationDiv = document.getElementById('ascii-animation');
+        
+        let currentFrame = 0; // Indice de la frame actuelle
+        
+        // Fonction pour afficher l'animation
+        function animate() {
+            animationDiv.textContent = frames[currentFrame]; // Afficher la frame actuelle
+            currentFrame = (currentFrame + 1) % frames.length; // Passer à la frame suivante
+        }
+        
+        // Lancer l'animation toutes les 500ms
+        setInterval(animate, 500);
+    </script>
+
+</body>
+</html>

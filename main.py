@@ -14,6 +14,7 @@ colors = {
     "reset": "\033[0m",      # Réinitialiser la couleur
 }
 
+
 # Frames de l'animation
 frames = [
     """
@@ -22,6 +23,7 @@ frames = [
 
 
     
+
 
          ,--._______,-. 
        ,','  ,    .  ,_`-. 
@@ -46,6 +48,7 @@ frames = [
    `^._,--'           / , , .) 
                       `-._,-' 
 ""","""
+
 
 
 
@@ -99,6 +102,7 @@ def animated_ascii():
                 # Passer à la couleur suivante
                 color_index = (color_index + 1) % len(color_sequence)
     
+
     return Response(generate(), mimetype="text/plain")
 
 if __name__ == "__main__":
